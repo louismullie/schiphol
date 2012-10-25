@@ -10,15 +10,10 @@ Gem::Specification.new do |s|
   s.email       = ['louis.mullie@gmail.com']
   s.homepage    = 'https://github.com/louismullie/schiphol'
   s.summary     = %q{ Schiphol: a smart file downloader for Ruby. }
-  s.description = %q{ Schiphol is a smart file downloader for Ruby, with automatic file type resolution by MIME header, progress bar with ETR, extraction of downloaded ZIP archives, and auto-retries for a preset number of times. }
+  s.description = %q{ Schiphol is a Ruby downloader script with progress bar, retries, MIME type detection and ZIP file extraction. }
   
   # Add all files.
   s.files = Dir['lib/**/*'] + ['README.md', 'LICENSE']
-  
-  s.post_install_message = 
-  "********************************************************************************\n\n" +
-  "Thank you for installing Schiphol!\n\n" +
-  "********************************************************************************\n\n"
   
   # Runtime dependencies
   s.add_runtime_dependency 'rubyzip', '>= 0.9.6.1'
