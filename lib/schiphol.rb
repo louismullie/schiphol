@@ -6,7 +6,7 @@
 # - Automatically retry downloads N times.
 class Schiphol
 
-  VERSION = '0.9'
+  VERSION = '0.9.1'
   
   #* External dependencies *#
   
