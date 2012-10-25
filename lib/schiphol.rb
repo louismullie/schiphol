@@ -99,8 +99,6 @@ class Schiphol
       
           # Write the downloaded file.
           response.read_body do |segment|
-            segment.force_encoding('UTF-8')
-
             # Increment the progress bar.
             bar.inc(segment.length) if bar
             # Write the read segment.
