@@ -2,10 +2,10 @@
 
 ... is a smart downloader script for Ruby, with
 
-- Automatic file type resolution w/ MIMEs.
 - Progress bar for downloads, with ETA.
-- Downloads and extracts ZIP archives.
-- Automatically retry downloads N times.
+- Following for 301/302 redirect links.
+- Automatic file type resolution w/ MIMEs.
+- Automatic retries for failed downloads.
 
 ## Install
 
