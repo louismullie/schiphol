@@ -6,7 +6,7 @@
 # - Automatically retry downloads N times.
 class Schiphol
 
-  VERSION = '0.9.1'
+  VERSION = '0.9.2'
   
   #* External dependencies *#
   
@@ -64,6 +64,7 @@ class Schiphol
 
     # Globalize number of tries for this download.
     tries = 0
+    redirects = 0
     
     # Globalize the scope of our file handler.
     file = nil
@@ -79,6 +80,21 @@ class Schiphol
         # Start a GET request to the server.
         http.request_get(uri.path) do |response|
           
+          # Watch for 302 redirects.
+          if response.is_a?(Net::HTTPRedirection) ||
+             response.code == "301"
+            if redirects > 2
+              raise "Too many redirects. Stopping."
+            else
+              redirects += 1
+              return self.download(
+              response['location'], options)
+            end
+          else
+            # Check response code was OK.
+            check_response_code(response.code)
+          end
+          
           # Get filename and rectify extension.
           if options[:rectify_extensions]
             fname = rectify_extensions(
@@ -91,16 +107,12 @@ class Schiphol
             response.content_length)
           end
           
-          # Check response code was OK.
-          check_response_code(response.code)
-          
           # Open a file to write to.
           file = File.open("#{path}/#{fname}", 'w')
       
           # Write the downloaded file.
           response.read_body do |segment|
-           segment.force_encoding('UTF-8')
-
+           #  segment.force_encoding('UTF-8')
             # Increment the progress bar.
             bar.inc(segment.length) if bar
             # Write the read segment.
