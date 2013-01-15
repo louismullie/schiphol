@@ -108,11 +108,10 @@ class Schiphol
           end
           
           # Open a file to write to.
-          file = File.open("#{path}/#{fname}", 'w')
+          file = File.open("#{path}/#{fname}", 'wb')
       
           # Write the downloaded file.
           response.read_body do |segment|
-           #  segment.force_encoding('UTF-8')
             # Increment the progress bar.
             bar.inc(segment.length) if bar
             # Write the read segment.
