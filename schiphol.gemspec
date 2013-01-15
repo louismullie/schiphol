@@ -1,5 +1,6 @@
-# -*- encoding: utf-8 -*-
-require File.expand_path('../lib/schiphol/version', __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
+
+require 'schiphol/version'
 
 Gem::Specification.new do |s|
   
