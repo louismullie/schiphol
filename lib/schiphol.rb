@@ -5,8 +5,6 @@
 # - Downloads and extracts ZIP archives.
 # - Automatically retry downloads N times.
 class Schiphol
-
-  VERSION = '0.9.2'
   
   #* External dependencies *#
   
