@@ -1,3 +1,3 @@
 module Schiphol
-  VERSION = '0.9.3'.freeze unless defined?(::Schiphol::VERSION)
+  VERSION = '0.9.4'
 end
