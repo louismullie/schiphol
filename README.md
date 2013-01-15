@@ -25,20 +25,21 @@ Schiphol.download('http://www.url.com/path/to/file.html')
 
 **Advanced**
 
-The options shown are the default values.
-
 ```ruby
 require 'schiphol'
 
 Schiphol.download(
   'http://www.url.com/path/to/file.html',
-  :download_folder => './my_downloads',
+  # Default values
+  :download_folder => '$GEM$/lib/downloads',
   :target_directory => '',
   :show_progress => true,
   :rectify_extensions => false,
   :max_tries => 3
 )
 ```
+
+Where `$GEM$` represents the gem's directory.
 
 ## License
 
