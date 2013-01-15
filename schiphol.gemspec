@@ -4,7 +4,7 @@ require File.expand_path('../lib/schiphol/version', __FILE__)
 Gem::Specification.new do |s|
   
   s.name        = 'schiphol'
-  s.version     = Schiphol::VERSION.dup
+  s.version     = Schiphol::VERSION
   s.authors     = ['Louis Mullie']
   s.email       = ['louis.mullie@gmail.com']
   s.homepage    = 'https://github.com/louismullie/schiphol'
