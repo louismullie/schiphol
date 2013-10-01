@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*'] + ['README.md', 'LICENSE']
   
   # Runtime dependencies
-  s.add_runtime_dependency 'rubyzip', '>= 0.9.6.1'
+  s.add_runtime_dependency 'rubyzip', '~> 0.9.9'
   s.add_runtime_dependency 'progressbar', '>= 0.10.0'
   
 end
