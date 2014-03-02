@@ -75,7 +75,7 @@ module Schiphol
       http.use_ssl = true if uri.scheme == 'https'
 
       # Start an HTTP server to download.
-      http.start(uri.host) do |http|
+      http.start do |http|
         
         # Start a GET request to the server.
         http.request_get(uri.path) do |response|
