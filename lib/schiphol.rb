@@ -68,12 +68,14 @@ module Schiphol
     file = nil
     
     begin
+      
+      http = Net::HTTP.new(uri.host, uri.port)
+      
+      # Use SSL if appropriate based on the scheme.
+      http.use_ssl = true if uri.scheme == 'https'
 
       # Start an HTTP server to download.
-      Net::HTTP.start(uri.host) do |http|
-        
-        # Use SSL if appropriate based on the scheme.
-        http.use_ssl = true if uri.scheme == 'https'
+      http.start(uri.host) do |http|
         
         # Start a GET request to the server.
         http.request_get(uri.path) do |response|
