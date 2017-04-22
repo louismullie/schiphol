@@ -31,7 +31,7 @@ module Schiphol
     # directly into self.downloads.
     :target_directory => '',
     # Whether to show a progress bar or not.
-    :show_progress => true,
+    :show_progress => false,
     # If set to true, downloaded files bear
     # the appropriate extension for their 
     # MIME type rather than the original
