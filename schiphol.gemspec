@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.name        = 'schiphol'
   s.version     = Schiphol::VERSION
   s.authors     = ['Louis Mullie']
+	s.license			= ['MIT']
   s.email       = ['louis.mullie@gmail.com']
   s.homepage    = 'https://github.com/louismullie/schiphol'
   s.summary     = %q{ Schiphol: a smart file downloader for Ruby. }
